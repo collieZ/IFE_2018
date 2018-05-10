@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+            *{
+            margin: 0px;
+            padding: 0px;
+            }
+
+            html{
+            font-size: 10px;
+            }
+
+            .container{
+            height: 100%;
+            background-color: #09e9a7;
+            }
+
+            .container > h1{
+            text-align: center;
+            font-size: 40px;
+            color: #cce2db;
+            font-family: fantasy, Verdana, cursive;
+            }
+
+            .avatar_img{
+            position: relative;
+            margin: auto;
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            border: 8px solid #2cb1b3;
+            border-style: groove;
+            overflow: hidden;
+            margin-bottom: 50px;
+            }
+
+            .avatar_img > img{
+            width: 150px;
+            height: 150px;
+            }
+
+            .self-intr{
+            width: 400px;
+            position: relative;
+            margin: auto;
+            text-align: center;
+            margin-bottom: 40px; 
+            font-size: 10px; 
+            }
+
+            .self-intr h2{
+            font-family:Helvetica, Arial, sans-serif;
+            font-weight: bold; 
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px #03552f;
+            }
+
+            .self-intr p{
+            font-size: 2rem;
+            font-weight: bold; 
+            }
+
+            .self-intr p a{
+            font-size: 2rem;
+            font-weight: bold; 
+            text-decoration: none;
+            color: white;
+            }
+
+            .self-intr a::before{
+            content: '';
+            position: absolute;
+            left: 170px;
+            bottom: 0px;
+            width: 120px;
+            height: 2px;
+            background: pink;
+            transition: transform .5s;
+            transform: scaleX(0);
+            
+            }
+
+            .self-intr a:hover::before{
+            transform: scaleX(1);
+            }
+
+            .self-intr a:hover{
+            color: #037cae;
+            }
+
+            .self-intr p b{
+            color: white;
+            font-size: 1.2em;
+            }
+
+            .my-skill{
+            display: flex;
+            width: 1000px;
+            margin: auto;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            } 
+
+            .my-skill dl{
+            display: inline-block;
+            }
+
+            .my-skill dl dt{
+            font-size: 24px;
+            color: #037cae;
+            }
+
+            .my-skill dl dd{
+                list-style: none;
+                font-size: 20px;
+                color: white;
+                line-height: 1.5em;
+                text-indent: 2rem;
+            }
+
+            .my-email{
+            width: 100%;
+            height: 30px;
+            text-align: center;
+            }
+            .my-email b{
+            font-size: 19px;
+            color: white;
+            }
+
+            .my-email p{
+            font-size: 18px;
+            /*   color: #0f874f */
+            }
+
+            /* 第四天任务添加 */
+            .my-email a:link,.my-email a:visited{
+            
+            color: gray;
+            text-decoration: none;
+            }
+
+            .my-email a:hover,.my-email a:active{
+            
+            color: #037cae; 
+            }
+
+            .skill{
+            font-size: 2rem;
+            margin-left: 20px;
+            margin-top: 20px;
+            }
+
+            .skill h3{
+            font-size: 3rem;
+            color: #037cae;
+            }
+
+            .skill ul{
+            list-style: none;
+            line-height: 30px;
+            color: white;
+            list-style-type: none;
+            }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>简历</h1>
+        <div class="avatar_img">
+            <img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fqo25jyyo1j30go0gowfj.jpg" alt="头像">
+        </div>
+        <div class="self-intr">
+            <h2>绅士</h2>
+            <br/>
+            <p>
+                <b>学院:</b>
+                <a href="http://ife.baidu.com">百度前端学院</a>
+            </p>
+        </div>
+        <div class="my-skill">
+            <dl>
+                <dt>
+                    <b>项目A</b>
+                </dt>
+                <dd>2018.4-2018.9</dd>
+                <dd>负责项目中html代码的编写</dd>
+            </dl>
+            <dl>
+                <dt>项目B</dt>
+                <dd>2018.4-2018.9</dd>
+                <dd>负责项目中css代码的编写</dd>
+            </dl>
+            <dl>
+                <dt>项目C</dt>
+                <dd>2018.4-2018.9</dd>
+                <dd>负责项目中JavaScript代码的编写</dd>
+            </dl>
+        </div>
+        <div class="my-email">
+            <p>
+                <b>Email:</b>
+                <a href="hentaizhou@qq.com">hentaizhou@qq.com</a>
+            </p>
+        </div>
+        <div class='skill'>
+            <h3>技能</h3>
+            <ul>
+                <li>html5</li>
+                <li>css3</li>
+                <li>javascript</li>
+            </ul>
+        </div>
+        <button type="" id="btn1">打个招呼～</button>
+        <button type="" id="btn2">查看我的爱好~</button>
+        <div id="hobby"></div>
+    </div>
+    
+    <script>
+        var btn =  document.getElementById("btn1");
+        var btn_hobby = document.getElementById('btn2');
+        var showHobby = document.getElementById('hobby');
+        
+        btn.onclick = function () {
+            alert('haha');
+        }
+        btn_hobby.onclick = function () {
+            
+            showHobby.innerHTML = ('hemml');
+            showHobby.style.fontSize = '20px';
+        }
+
+    </script>
+</body>
+
+</html>
+</html>
