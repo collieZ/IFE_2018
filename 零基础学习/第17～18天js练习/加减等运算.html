@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="first-number" type="number" value=0 placeholder="第一个数字">
+    <input id="second-number" type="number" value=0 placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        var add = document.getElementById("add-btn");
+        var minus = document.getElementById("minus-btn");
+        var times = document.getElementById("times-btn");
+        var divide = document.getElementById("divide-btn");
+        var firstNum = document.getElementById("first-number");
+        var secondNum = document.getElementById("second-number");
+        var showResult = document.getElementById('result');
+
+        // function checkNum(input1, input2) { 
+        //         var fnum = parseInt(firstNum.value);
+        //         var snum = parseInt(secondNum.value);
+        //         if (isNaN(input1) || isNaN(input2)) {
+        //             console.log('err:it\'s not a number!');
+        //         }
+        //     }
+
+            // var check = (function checkNum() {
+            //         var nums = {
+            //             fnum: parseInt(firstNum.value),
+            //             snum: parseInt(secondNum.value)
+            //         }
+            //         if (isNaN(nums.fnum) || isNaN(nums.snum)) {
+            //             console.log('err:it\'s not a number!');
+            //         }
+            //         return {
+            //         function get(rand) {
+            //                 return nums[rand] ? nums[rand] : null;
+            //             }
+            //         }
+            //     })();
+
+                function checkNum() {
+                    var fnum = parseInt(firstNum.value);   // 字符串中有字母就会返回nan
+                    var snum = parseInt(secondNum.value);
+                    
+                    if (isNaN(fnum) || isNaN(snum)) {
+                        // alert(firstNum.value);
+                        console.log('err:it\'s not a number!');
+                    }
+                    
+                    this.meathod = function (nums) {    // 这里完全可以直接取值运算，采用这种方法只是为了学习闭包
+                        if(nums == 'fnum'){
+                            fnum = parseInt(firstNum.value);
+                            return fnum;
+                        }
+                        else if (nums == 'snum') {
+                            snum = parseInt(secondNum.value);
+                            return snum;
+                        }
+                    }
+                }
+                
+                var check = new checkNum(); 
+
+        add.onclick = function () {
+
+            checkNum(); // 输入验证
+            var sum = check.meathod('fnum') + check.meathod('snum');
+            showResult.innerText = '运算结果 ' + sum;
+        }
+        minus.onclick = function () {
+            
+            checkNum(); // 输入验证
+            var cha = check.meathod('fnum') - check.meathod('snum');
+            showResult.innerText = '运算结果 ' + cha;
+        }
+        times.onclick = function () {
+            checkNum(); // 输入验证
+            var ji = check.meathod('fnum') * check.meathod('snum');
+            showResult.innerText = '运算结果 ' + ji;
+        }
+        divide.onclick = function () {
+            checkNum(); // 输入验证
+            var shang = check.meathod('fnum') / check.meathod('snum');
+            showResult.innerText = '运算结果 ' + shang;
+        }
+
+        
+    </script>
+</body>
+</html>

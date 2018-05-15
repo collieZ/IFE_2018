@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>17-18 IFE</title>
+</head>
+<body>
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+        var inputNum = document.getElementById('dec-number');
+        var dec_bit = document.getElementById('bin-bit');
+        var click2bin = document.getElementById('trans-btn');
+        var showDec = document.getElementById('result');
+
+        function dec2bin(decNumber) {
+            // 在这里实现你的转化方法，注意需要判断输入必须为一个非负整数
+            let inputValue = inputNum.value;
+            let inputArr = inputValue.split('');
+            let decValue = parseInt(inputValue);
+            let decBit = dec_bit.value;
+
+            // console.log(decBit);
+            if ( inputArr[0] === '-' ) {    // 输入校验
+                
+                return console.log('请输入非负数');
+            }else if ( inputValue === '' || inputValue === ' ') {   // 如果输入不为数字 inputValue默认变为''
+                
+                return console.log('请输入正确值');
+            }
+            else if ( inputValue.indexOf('.') !== -1 ){
+
+                return console.log('请输入整数');
+            } 
+
+            let bits = decValue.toString(2).length;
+            if ( decBit < bits ) {
+                console.log('输入二进制位数小于实际输出位数');
+            }
+            showDec.innerText = '运算结果 ' + decValue.toString(2);
+            // console.log( decValue.toString(2).length );
+        }
+        
+        click2bin.onclick = dec2bin;
+
+        // 实现点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+        // Some coding
+        
+
+    </script>
+</body>
+</html>

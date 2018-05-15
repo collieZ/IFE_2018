@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+         table td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table id="99tb" cellspacing="0"></table>
+
+    <script>
+        var tables = document.getElementById('99tb');
+
+        for (let i = 1; i <= 9; i++) {      
+            let contentTr = document.createElement('tr');
+            for (let j = 1; j <= i; j++) {
+                let contentTd = document.createElement('td');
+                contentTd.innerText = j + '*' + i + '=' + j*i;
+                contentTr.appendChild(contentTd);
+            }
+            tables.appendChild(contentTr);
+        }
+    </script>
+</body>
+</html>

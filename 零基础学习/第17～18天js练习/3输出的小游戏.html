@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let show3 = function () { 
+            // 判断并显示3的倍数或含有3的数
+            for (let i = 1; i <= 100; i++) {
+
+                if (i % 3 == 0) {
+                    console.log('PA');
+                }
+                else if (find3(i) != -1) {
+                    console.log('PA');
+                } 
+                else {
+                    console.log(i);
+                }
+            }
+        }
+
+        function find3(num) {
+            // 判断含有3的数
+            let strs = num + '';
+            let str_split = strs.split('');
+    
+            return str_split.indexOf('3');
+        }
+
+        show3();
+        
+    </script>
+</body>
+</html>
