@@ -37,8 +37,15 @@
 
     function getAllListItem() {
         // 返回页面中所有li标签
-        var listItems = document.getElementsByTagName("li");
-        console.log(listItems.length)
+        // var listItems = document.getElementsByTagName("li");
+        // console.log(listItems.length)
+        // for (let i = 0; i < listItems.length; i++) {
+        //     console.log(listItems[i]);
+        // }
+
+        // querySelectAll 方法
+        var listItems = document.querySelectorAll('li');
+        console.log(listItems.length);
         for (let i = 0; i < listItems.length; i++) {
             console.log(listItems[i]);
         }
@@ -72,15 +79,19 @@
 
     function getActiveLinkContent(sectionId) {
         // 返回某个section下，class为active的链接中包含的文字内容
-        var sectionspan = document.getElementById(sectionId);
-        var linkClass = sectionspan.getElementsByTagName('a');
-        for (let i = 0; i < linkClass.length; i++){
-            let getaAttribute = linkClass[i].getAttribute('class');
-            if (getaAttribute == 'active') {
-                let aContent = linkClass[i].innerText;
-                console.log(aContent);
-            }
-        }
+        // var sectionspan = document.getElementById(sectionId);
+        // var linkClass = sectionspan.getElementsByTagName('a');
+        // for (let i = 0; i < linkClass.length; i++){
+        //     let getaAttribute = linkClass[i].getAttribute('class');
+        //     if (getaAttribute == 'active') {
+        //         let aContent = linkClass[i].innerText;
+        //         console.log(aContent);
+        //     }
+        // }
+
+        // 方法2
+        var selectActiveContent = document.querySelectorAll('#' + sectionId + ' ' + 'a.active');  // 非实时性
+        console.log(selectActiveContent);
     }
     getActiveLinkContent('news-normal');
     </script>
